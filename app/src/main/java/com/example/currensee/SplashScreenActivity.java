@@ -19,12 +19,14 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     private VideoView videoView;
     private ImageView imageView;
+    private ImageView zoomBTN;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
+        zoomBTN = findViewById(R.id.mg_glass);
         videoView = findViewById(R.id.video_view);
         imageView = findViewById(R.id.image_view);
 
@@ -40,13 +42,17 @@ public class SplashScreenActivity extends AppCompatActivity {
         });
 
         // Animate the image
-        Animation animation = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.fade);
         imageView.startAnimation(animation);
 
         // Animate the text
-        Animation textAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        Animation textAnimation = AnimationUtils.loadAnimation(this, R.anim.fade);
         TextView animatedText = findViewById(R.id.animated_text);
         animatedText.startAnimation(textAnimation);
+
+         //Animate the glass image
+        Animation animImage = AnimationUtils.loadAnimation(this, R.anim.zoom);
+        zoomBTN.startAnimation(animImage);
 
         // Wait for the video to finish loading and the animation to complete
         long videoDuration = getVideoDuration(R.raw.splash_video);

@@ -26,22 +26,36 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/video_view"
-        app:layout_constraintVertical_bias="0.77" />
+        app:layout_constraintVertical_bias="0.64" />
 
     <TextView
         android:id="@+id/animated_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
-        android:text="Your Beautiful Animated Text"
-        android:textColor="#4169E1"
-        android:textSize="24sp"
+        android:layout_width="200dp"
+        android:layout_height="66dp"
+        android:layout_marginBottom="-5dp"
+        android:fontFamily="@font/berkshire_swash"
+        android:text="CurrenSee"
+        android:textColor="#192E57"
+        android:textSize="45sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/image_view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.364"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/video_view"
         app:layout_constraintVertical_bias="1.0"
         tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/mg_glass"
+        android:layout_width="47dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="272dp"
+        app:layout_constraintEnd_toEndOf="@+id/video_view"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/animated_text"
+        app:layout_constraintTop_toTopOf="@+id/video_view"
+        app:srcCompat="@drawable/moneyglass" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

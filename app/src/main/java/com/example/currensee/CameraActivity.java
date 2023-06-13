@@ -39,6 +39,7 @@ import android.widget.Toast;
 
 import com.example.currensee.env.ImageUtils;
 import com.example.currensee.env.Logger;
+import com.example.currensee.tflite.Classifier;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import java.nio.ByteBuffer;
 

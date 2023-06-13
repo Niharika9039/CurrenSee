@@ -3,12 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/nihar/AndroidStudioProjects/CurrenSee/app/src/main/res/drawable/bottom_sheet_bg.xml" value="0.192" />
+        <entry key="..\:/Users/nihar/AndroidStudioProjects/CurrenSee/app/src/main/res/drawable/ic_baseline_add.xml" value="0.192" />
+        <entry key="..\:/Users/nihar/AndroidStudioProjects/CurrenSee/app/src/main/res/drawable/ic_baseline_remove.xml" value="0.192" />
+        <entry key="..\:/Users/nihar/AndroidStudioProjects/CurrenSee/app/src/main/res/drawable/ic_launcher_background.xml" value="0.192" />
+        <entry key="..\:/Users/nihar/AndroidStudioProjects/CurrenSee/app/src/main/res/drawable/rectangle.xml" value="0.192" />
         <entry key="..\:/Users/nihar/AndroidStudioProjects/CurrenSee/app/src/main/res/font/.xml" value="0.28020833333333334" />
         <entry key="..\:/Users/nihar/AndroidStudioProjects/CurrenSee/app/src/main/res/font/acme.xml" value="0.14010416666666667" />
         <entry key="..\:/Users/nihar/AndroidStudioProjects/CurrenSee/app/src/main/res/font/akaya_telivigala.xml" value="0.14010416666666667" />
         <entry key="..\:/Users/nihar/AndroidStudioProjects/CurrenSee/app/src/main/res/layout/activity_camera.xml" value="0.25" />
         <entry key="..\:/Users/nihar/AndroidStudioProjects/CurrenSee/app/src/main/res/layout/activity_main.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/nihar/AndroidStudioProjects/CurrenSee/app/src/main/res/layout/activity_splash_screen.xml" value="0.21784420289855072" />
+        <entry key="..\:/Users/nihar/AndroidStudioProjects/CurrenSee/app/src/main/res/layout/camera_connection_fragment.xml" value="0.25" />
         <entry key="..\:/Users/nihar/AndroidStudioProjects/CurrenSee/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.25" />
       </map>
     </option>

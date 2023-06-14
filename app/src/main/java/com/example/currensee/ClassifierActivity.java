@@ -9,9 +9,12 @@ import android.util.Size;
 import android.util.TypedValue;
 import android.widget.Toast;
 
+import com.example.currensee.env.BorderedText;
 import com.example.currensee.env.Logger;
+import com.example.currensee.tflite.Classifier;
 
 import java.io.IOException;
+import java.util.List;
 
 
 public class ClassifierActivity extends CameraActivity implements OnImageAvailableListener {
@@ -102,19 +105,19 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
             // Defer creation until we're getting camera frames.
             return;
         }
-        final Device device = getDevice();
-        final Model model = getModel();
+        final Classifier.Device device = getDevice();
+        final Classifier.Model model = getModel();
         final int numThreads = getNumThreads();
         runInBackground(() -> recreateClassifier(model, device, numThreads));
     }
 
-    private void recreateClassifier(Model model, Device device, int numThreads) {
+    private void recreateClassifier(Classifier.Model model, Classifier.Device device, int numThreads) {
         if (classifier != null) {
             LOGGER.d("Closing classifier.");
             classifier.close();
             classifier = null;
         }
-        if (device == Device.GPU && model == Model.QUANTIZED) {
+        if (device == Classifier.Device.GPU && model == Classifier.Model.QUANTIZED) {
             LOGGER.d("Not creating classifier: GPU doesn't support quantized models.");
             runOnUiThread(
                     () -> {

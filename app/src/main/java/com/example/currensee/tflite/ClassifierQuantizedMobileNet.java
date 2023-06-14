@@ -1,6 +1,10 @@
 package com.example.currensee.tflite;
 
 import android.app.Activity;
+
+import org.tensorflow.lite.support.common.TensorOperator;
+import org.tensorflow.lite.support.common.ops.NormalizeOp;
+
 import java.io.IOException;
 
 /** This TensorFlow Lite classifier works with the quantized MobileNet model. */

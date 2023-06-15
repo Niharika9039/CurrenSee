@@ -332,24 +332,6 @@ public abstract class CameraActivity extends AppCompatActivity
         mp1 = MediaPlayer.create(this, R.raw.ten);
         mp2 = MediaPlayer.create(this, R.raw.five);
 
- /*   mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-      @Override
-      public void onCompletion(MediaPlayer mp) {
-        mp.release();
-      }
-    });
-    mp1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-      @Override
-      public void onCompletion(MediaPlayer mp) {
-        mp.release();
-      }
-    });
-    mp2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-      @Override
-      public void onCompletion(MediaPlayer mp) {
-        mp.release();
-      }
-    });*/
     }
 
     @Override
@@ -537,12 +519,15 @@ public abstract class CameraActivity extends AppCompatActivity
         }
     }
     boolean hun = false;
+    boolean two = false;
     boolean five = false;
+    boolean fif = false;
+    boolean twen = false;
     boolean ten = false;
     @UiThread
     protected void showResultsInBottomSheet(List<Classifier.Recognition> results) {
 
-        if (results != null && results.size() >= 3) {
+        if (results != null && results.size() >= 6) {
             Classifier.Recognition recognition = results.get(0);
             if (recognition != null) {
                 if (recognition.getTitle() != null) recognitionTextView.setText(recognition.getTitle());
@@ -550,26 +535,62 @@ public abstract class CameraActivity extends AppCompatActivity
                     recognitionValueTextView.setText(
                             String.format("%.2f", (100 * recognition.getConfidence())) + "%");
                 float confi = 100 * recognition.getConfidence();
-                try {
-                    if (!five && recognitionTextView.getText().toString().equalsIgnoreCase("500") && confi>99 ) {
-                        mp2.start();
-                        five =true;
-                        ten = false;
-                        hun = false;
-                    } else if (!hun&& recognitionTextView.getText().toString().equalsIgnoreCase("100")&& confi>99) {
-                        mp.start();
-                        hun = true;
-                        five =false;
-                        ten = false;
-                    } else if (!ten&&recognitionTextView.getText().toString().equalsIgnoreCase("10")&& confi>90 ) {
-                        mp1.start();
-                        ten  =true;
-                        five =false;
-                        hun = false;
-                    }
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
+//                try {
+//                    if (!hun && recognitionTextView.getText().toString().equalsIgnoreCase("100") && confi>99 ) {
+//                        mp2.start();
+//                        five =false;
+//                        twen = false;
+//                        hun = true;
+//                        two = false;
+//                        fif = false;
+//                        ten = false;
+//                    } else if (!two&& recognitionTextView.getText().toString().equalsIgnoreCase("200")&& confi>99) {
+//                        mp.start();
+//                        two = true;
+//                        hun = false;
+//                        five = false;
+//                        twen = false;
+//                        fif = false;
+//                        ten = false;
+//                    } else if (!five&&recognitionTextView.getText().toString().equalsIgnoreCase("500")&& confi>90 ) {
+//                        mp1.start();
+//                        two = false;
+//                        hun = false;
+//                        five = true;
+//                        twen = false;
+//                        fif = false;
+//                        ten = false;
+//                    }
+//                    else if (!fif&&recognitionTextView.getText().toString().equalsIgnoreCase("50")&& confi>90 ) {
+//                        mp1.start();
+//                        two = false;
+//                        hun = false;
+//                        five = false;
+//                        twen = false;
+//                        fif = true;
+//                        ten = false;
+//                    }
+//                    else if (!twen&&recognitionTextView.getText().toString().equalsIgnoreCase("20")&& confi>90 ) {
+//                        mp1.start();
+//                        two = false;
+//                        hun = false;
+//                        five = false;
+//                        twen = true;
+//                        fif = false;
+//                        ten = false;
+//                    }
+//                    else if (!ten&&recognitionTextView.getText().toString().equalsIgnoreCase("10")&& confi>90 ) {
+//                        mp1.start();
+//                        two = false;
+//                        hun = false;
+//                        five = false;
+//                        twen = false;
+//                        fif = false;
+//                        ten = true;
+//                    }
+//                }catch (Exception e){
+//                    e.printStackTrace();
+//                }
             }
 
             Classifier.Recognition recognition1 = results.get(1);

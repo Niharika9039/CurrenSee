@@ -29,6 +29,7 @@ import android.util.Size;
 import android.view.Surface;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -96,12 +97,14 @@ public abstract class CameraActivity extends AppCompatActivity
     protected void onCreate(final Bundle savedInstanceState) {
         LOGGER.d("onCreate " + this);
         super.onCreate(null);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
         setContentView(R.layout.activity_camera);
 
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
+        Window window = getWindow();
+        window.setBackgroundDrawableResource(R.drawable.gradient);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.app_name);
+        setSupportActionBar(toolbar);
 //        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         if (hasPermission()) {
